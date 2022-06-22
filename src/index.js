@@ -5,6 +5,7 @@ import _ from 'lodash'
 
 import zoomPlugin from 'chartjs-plugin-zoom'
 import annotationPlugin from 'chartjs-plugin-annotation'
+import datalabelsPlugin from 'chartjs-plugin-datalabels'
 
 class Card extends LitElement {
   static get properties() {
@@ -73,6 +74,9 @@ class Card extends LitElement {
       }
       if (this._config.register_plugins.includes('annotation')) {
         Chart.register(annotationPlugin)
+      }
+      if (this._config.register_plugins.includes('datalabels')) {
+        Chart.register(datalabelsPlugin)
       }
     }
 
